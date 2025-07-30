@@ -685,9 +685,7 @@
     <div class="container">
         <div class="profile-card">
             <div class="profile-image">
-                <!-- Thay thế src bằng đường dẫn ảnh của bạn -->
                 <img src="avatar1.jpg" alt="Nguyễn Thành Đại Sơn" id="profilePhoto">
-                <!-- Nếu không có ảnh, sẽ hiển thị chữ cái đầu -->
                 <div class="profile-image-placeholder" id="placeholder" style="display: none;">
                     SN
                 </div>
@@ -837,7 +835,7 @@
         </div>
     </div>
 
-    <!-- Contact Page -->
+
     <div class="contact-page" id="contactPage">
         <div class="contact-container">
             <div class="contact-card" id="contactCard">
@@ -882,7 +880,7 @@
     </div>
 
     <script>
-        // Hiển thị trang CV
+
         function showCVPage() {
             const cvPage = document.getElementById('cvPage');
             const cvCard = document.getElementById('cvCard');
@@ -895,7 +893,7 @@
             }, 100);
         }
 
-        // Ẩn trang CV
+
         function hideCVPage() {
             const cvPage = document.getElementById('cvPage');
             const cvCard = document.getElementById('cvCard');
@@ -908,13 +906,13 @@
             }, 300);
         }
 
-        // In CV
+
         function printCV() {
             const cvCard = document.getElementById('cvCard');
             const originalContent = document.body.innerHTML;
             const cvContent = cvCard.outerHTML;
             
-            // Tạo nội dung in
+
             const printContent = `
                 <!DOCTYPE html>
                 <html>
@@ -944,7 +942,7 @@
             printWindow.print();
         }
 
-        // Hiển thị trang liên hệ
+
         function showContactPage() {
             const contactPage = document.getElementById('contactPage');
             const contactCard = document.getElementById('contactCard');
@@ -957,7 +955,7 @@
             }, 100);
         }
 
-        // Ẩn trang liên hệ
+
         function hideContactPage() {
             const contactPage = document.getElementById('contactPage');
             const contactCard = document.getElementById('contactCard');
@@ -970,7 +968,7 @@
             }, 300);
         }
 
-        // Đóng trang liên hệ khi bấm ESC
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 hideContactPage();
@@ -978,13 +976,13 @@
             }
         });
 
-        // Xử lý lỗi khi không tải được ảnh
+
         document.getElementById('profilePhoto').addEventListener('error', function() {
             this.style.display = 'none';
             document.getElementById('placeholder').style.display = 'flex';
         });
 
-        // Thêm hiệu ứng parallax cho các hình dạng nổi
+
         document.addEventListener('mousemove', (e) => {
             const shapes = document.querySelectorAll('.shape');
             const x = e.clientX / window.innerWidth;
@@ -999,7 +997,7 @@
             });
         });
 
-        // Thêm hiệu ứng scroll cho các phần tử
+
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1014,7 +1012,7 @@
             });
         }, observerOptions);
 
-        // Quan sát các phần tử khi trang tải
+
         document.addEventListener('DOMContentLoaded', () => {
             const elements = document.querySelectorAll('.info-item, .skill-item');
             elements.forEach(el => observer.observe(el));
